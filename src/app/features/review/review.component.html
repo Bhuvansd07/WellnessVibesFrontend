@@ -1,0 +1,48 @@
+<div class="body">
+    <div class="water-plants-container">
+        <h2>Feedback Form🔁</h2>
+
+        <form [formGroup]="feedbackForm">
+            <div class="add-plant-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" formControlName="name">
+                <span style="color: red;" *ngIf="name && name.invalid && name.touched">*This field is not valid</span>
+                
+                <label for="name">Username:</label>
+                <input type="text" id="username" formControlName="username">
+                <span style="color: red;" *ngIf="name && name.invalid && name.touched">*This field is not valid</span>
+                
+                <label for="date">Date:</label>
+                <input type="date" id="date" formControlName="createdAt">
+
+                <label for="location">Rating(Out of 10):</label>
+                <input type="text" id="rating" formControlName="rating">
+                <span style="color: red;" *ngIf="rating && rating.invalid && rating.touched">*This field is not
+                    valid</span>
+
+
+                <label for="feedback">Feedback:</label>
+                <input type="text" id="feedback" formControlName="feedMessage">
+                <span style="color: red;" *ngIf="feedback && feedback.invalid && feedback.touched">*This field is not
+                    valid</span>
+
+                <label for="suggestions">Suggestions:</label>
+                <input type="text" id="suggestions" formControlName="suggMessage">
+                <span style="color: red;" *ngIf="suggestions && suggestions.invalid && suggestions.touched">*This field
+                    is
+                    not valid</span>
+
+                <label for="report">Report Inappropriate Content:</label>
+                <input type="text" id="report" formControlName="reportMessage">
+                <span style="color: red;" *ngIf="report && report.invalid && report.touched">*This field is not
+                    valid</span>
+                <div class="btn">
+                    <button type="submit" class="button" (click) = "addFeedback()" [disabled]="feedbackForm.invalid">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="subbody">
+        <p>hello</p>
+    </div>
+</div>

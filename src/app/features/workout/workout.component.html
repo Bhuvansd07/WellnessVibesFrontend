@@ -1,0 +1,43 @@
+<!-- <div class="container"> -->
+<!-- <div class="img1">
+    <img src="../../../assets/img/bg6.jpg" alt="">
+</div> -->
+<div class="form-container">
+    <div class="water-plants-container">
+        <div class="content d-flex" style="margin-left: 13rem;">
+            <img src="../../../assets/img/dumbell.png" alt="" style="width: 100px; height: 100px;">
+            <h2 class="ms-1 mt-4 pt-2" >Workout Suggestion Form</h2>
+        </div>
+
+        <form [formGroup]="routineForm">
+            <div class="add-plant-form">
+                <label for="name">Username:</label>
+                <input type="text" id="username" formControlName="username">
+                <span style="color: red;" *ngIf="username && username.invalid && username.touched">*This field is not valid</span>
+
+                <label for="feedback">Fitness Level:</label>
+                <input type="text" id="fitnessLevel" formControlName="fitnessLevel">
+                <span style="color: red;" *ngIf="fitnessLevel && fitnessLevel.invalid && fitnessLevel.touched">*This field is
+                    not
+                    valid</span>
+
+                <label for="suggestions">Goal:</label>
+                <input type="text" id="goal" formControlName="goal">
+                <span style="color: red;" *ngIf="goal && goal.invalid && goal.touched">*This
+                    field is not valid</span>
+
+                <label for="report">Duartion(per day in mins):</label>
+                <input type="text" id="report" formControlName="tDuration">
+                <span style="color: red;" *ngIf="tDuration && tDuration.invalid && tDuration.touched">*This field is not
+                    valid</span>
+                <div class="btn">
+                    <button type="submit" class="button" [disabled]="routineForm.invalid" (click)="addWorkout()" >Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="subbody">
+        <p>hello</p>
+    </div>
+</div>
+<!-- </div> -->

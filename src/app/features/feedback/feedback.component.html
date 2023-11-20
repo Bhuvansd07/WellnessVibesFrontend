@@ -1,0 +1,40 @@
+<section class="light" style="z-index: -2;">
+    <div class="container py-2">
+        <div class="h1 text-center text-dark" id="pageHeaderTitle">Feedback</div>
+        <div class="d-flex flex-column justify-content-center">
+            <h2>Do give a Feed back</h2>
+            <button routerLink="/review">Feedback Form</button>
+        </div>
+        <article class="postcard light blue" *ngFor="let item of feedbacks" style="z-index: 0;">
+            <a class="postcard__img_link" href="#">
+                <img class="postcard__img" src="../../../assets/img/user.jpg" alt="Image Title" />
+            </a>
+            <div class="postcard__text t-dark">
+                <h1 class="postcard__title blue"><a href="#">{{item.name}}</a></h1>
+                <div class="postcard__subtitle small">
+                    <time datetime="2020-05-25 12:00:00">
+                        <!-- <i class="fas fa-calendar-alt mr-2"></i> -->
+                        {{item.createdAt | date : "dd/MM/yyyy"}}
+                    </time>
+                </div>
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">
+                    <ul>
+                        <li style="list-style: none;">rating out of 5: {{item.rating}}⭐</li>
+                        <li style="list-style: none;">Feedback Message: {{item.feedMessage}}</li>
+                        <li style="list-style: none;">{{item.suggMessage}}</li>
+                        <li style="list-style: none;">{{item.reportMessage}}</li>
+                    </ul>
+
+                </div>
+                <!-- <ul class="postcard__tagbox">
+                    <li class="tag__item"><i class="fas fa-tag mr-2"></i>Podcast</li>
+                    <li class="tag__item"><i class="fas fa-clock mr-2"></i>55 mins.</li>
+                    <li class="tag__item play blue">
+                        <a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
+                    </li>
+                </ul> -->
+            </div>
+        </article>
+    </div>
+</section>

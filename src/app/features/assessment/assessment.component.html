@@ -1,0 +1,118 @@
+<div class="container">
+    <div class="head">
+        <h1>Health Assessment</h1>
+    </div>
+    <div class="forms">
+        <form [formGroup]="assessForm!">
+            <div class="row mt-5  mb-3 details">
+                <div class="col-lg-4 mx-5">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input matInput type="text" formControlName="username" required/>
+                        <mat-error
+                            *ngIf="assessForm?.get('username')?.invalid && assessForm?.get('username')?.touched" style="color: red;">{{getErrorMessage(username)}}</mat-error>
+                    </mat-form-field>
+                    <!-- <mat-hint style="color: red;" *ngIf=" && assessForm?.get('username')?.dirty&& assessForm?.get('username')?.touched"><span>*This field is not valid</span></mat-hint> -->
+                </div>
+                <div class="col-lg-4 mx-5">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Height(in m)</mat-label>
+                        <input matInput type="text" formControlName="height" required>
+                        <mat-error
+                            *ngIf="assessForm?.get('height')?.invalid && assessForm?.get('height')?.touched" style="color: red;">{{getErrorMessage(height)}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row my-4 details">
+                <div class="col-lg-4 mx-5 my-1">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Weight(in kgs)</mat-label>
+                        <input matInput type="text" formControlName="weight" required>
+                        <mat-error
+                            *ngIf="assessForm?.get('weight')?.invalid && assessForm?.get('weight')?.touched" style="color: red;">{{getErrorMessage(weight)}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-lg-4 mx-5 my-1">
+                    <mat-form-field appearance="outline">
+                        <mat-label>BMI</mat-label>
+                        <input matInput type="text" formControlName="BMI" required>
+                        <mat-error
+                            *ngIf="assessForm?.get('BMI')?.invalid && assessForm?.get('BMI')?.touched" style="color: red;">{{getErrorMessage(BMI)}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row my-4 details">
+                <div class="col-lg-4 mx-5">
+                    <mat-form-field appearance="outline">
+                        <mat-label>SystolicBP</mat-label>
+                        <input matInput type="text" formControlName="systolic" required >
+                        <mat-error
+                            *ngIf="assessForm?.get('systolic')?.invalid && assessForm?.get('systolic')?.touched" style="color: red;">{{getErrorMessage(systolic)}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-lg-4 mx-5 my-1">
+                    <mat-form-field appearance="outline">
+                        <mat-label>DisystolicBP</mat-label>
+                        <input matInput type="text" formControlName="diastolic" required>
+                        <mat-error
+                            *ngIf="assessForm?.get('diastolicBP')?.invalid && assessForm?.get('diastolic')?.touched" style="color: red;">{{getErrorMessage(diastolic)}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row my-4 details">
+                <div class="col-lg-4 mx-5">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Chronic Illness</mat-label>
+                        <input matInput type="text" formControlName="chronicIllness" required>
+                        <mat-error
+                            *ngIf="assessForm?.get('chronicIllness')?.invalid && assessForm?.get('chronicIllness')?.touched" style="color: red;">{{getErrorMessage(chronicIllness)}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-lg-4 mx-5 my-1">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Emotional state</mat-label>
+                        <input matInput type="text" formControlName="emotionalState" required>
+                        <mat-error
+                            *ngIf="assessForm?.get('emotionalState')?.invalid && assessForm?.get('emotionalState')?.touched" style="color: red;">{{getErrorMessage(emotional_state)}}></mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row my-4 details">
+                <div class="col-lg-4 mx-5">
+                    <mat-form-field appearance="outline">
+                        <mat-label>No.of Sleeping Hours</mat-label>
+                        <input matInput type="text" formControlName="sleep_patterns" required>
+                        <mat-error
+                            *ngIf="assessForm?.get('sleep_patterns')?.invalid && assessForm?.get('sleep_patterns')?.touched" style="color: red;">{{getErrorMessage(systolic)}}></mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-lg-4 mx-5 my-1">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Mental Illness</mat-label>
+                        <input matInput type="text" formControlName="mental_illness" required>
+                        <mat-error
+                            *ngIf="assessForm?.get('mental_illness')?.invalid && assessForm?.get('mental_illness')?.touched" style="color: red;">{{getErrorMessage(systolic)}}></mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <!-- <div class="row mt-5 mb-4 details">
+            <div class="d-flex col-lg-4 mx-5">
+                <mat-form-field appearance="outline">
+                    <mat-label>Gender</mat-label>
+                    <mat-select formControlName="gender">
+                        <input matInput placeholder="Placeholder">
+                        <mat-option value="Male">Male</mat-option>
+                        <mat-option value="Female">Female</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div> -->
+        </form>
+    </div>
+    <div class="d-flex justify-content-center pe-5 mb-3 me-5 mb-lg-4 btn">
+        <button type="submit" class="btn btn-primary btn-lg" [disabled]="assessForm?.invalid" (click)="addUser()">Submit</button>
+    </div>
+    <div class="d-flex justify-content-center pe-5 mb-3 me-5 mb-lg-4 btn2">
+        <button type="submit" class="btn btn-primary btn-lg" (click)="openDialog()">See Recommendations</button>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container bootstrap snippets bootdey">
+    <div class="row">
+        <div class="profile-nav col-md-3">
+            <div class="panel">
+                <div class="user-heading round">
+                    <a href="#">
+                        <img src="../../../assets/img/user.jpg" alt="user">
+                    </a>
+                    <h1 class="pt-3 pb-2" style="font-weight: bold; font-size: 30px; font-family: 'Roboto Mono', monospace;
+                    ">{{rout.username}}</h1>
+                    <p style="font-size: 20px; font-family: 'Roboto', sans-serif;
+                    "><span>Fitness Level</span>: <br>{{rout.fitnessLevel}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="profile-info col-md-9">
+            <div class="panel">
+                <div class="bio-graph-heading" style="font-family: 'Kdam Thmor Pro', sans-serif;
+                 font-size: 20px; line-height: 2;">
+                    “We are what we repeatedly do. Excellence then is not an act but a habit.” -Aristotele
+                </div>
+                <div class="panel-body bio-graph-info py-4 " style="padding-left: 100px;">
+                    <div class="row">
+                        <div class="bio-row" style="font-size: 25px;">
+                            <p><span>Goal</span>: {{rout.goal}}</p>
+                        </div>
+                        <div class="bio-row" style="font-size: 25px;">
+                            <p><span>Duartion</span>: {{rout.tDuration}} Mins</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="panel">
+                            <h1 class="text-muted" style="text-decoration: underline; padding-left: 22rem;">Exercises</h1>
+                            <div class="panel-body d-flex">
+                                <div class="bio-desk ps-5" *ngFor="let exercise of rout.exercises">
+                                    <div class="card" style="border: 1px solid;">
+                                        <div class="card-header">
+                                            <h4 style="text-decoration: underline;">{{exercise.exerciseType}}</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>{{exercise.duration}} Mins</p>
+                                            <p>{{exercise.intensity}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
