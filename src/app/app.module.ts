@@ -20,6 +20,7 @@ import { RoutinesComponent } from './features/routines/routines.component';
 import { DialogExampleComponent } from './features/dialog-example/dialog-example.component';
 import { StressManagementComponent } from './features/stress-management/stress-management.component';
 import { LoginComponent } from './features/login/login.component';
+import { ChartsComponent } from './features/charts/charts.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { LoginComponent } from './features/login/login.component';
     DialogExampleComponent,
     StressManagementComponent,
     LoginComponent,
+    ChartsComponent,
   ],
   imports: [
     BrowserModule,

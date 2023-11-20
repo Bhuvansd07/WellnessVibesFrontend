@@ -10,6 +10,7 @@ import { WorkoutComponent } from './features/workout/workout.component';
 import { RoutinesComponent } from './features/routines/routines.component';
 import { StressManagementComponent } from './features/stress-management/stress-management.component';
 import { LoginComponent } from './features/login/login.component';
+import { ChartsComponent } from './features/charts/charts.component';
 
 const routes: Routes = [
   {
@@ -55,6 +56,10 @@ const routes: Routes = [
   {
     path:"login",
     component:LoginComponent
+  },
+  {
+    path:"charts",
+    component:ChartsComponent
   }
 ];
 

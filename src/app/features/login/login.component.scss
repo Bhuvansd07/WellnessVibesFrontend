@@ -14,6 +14,20 @@ body{
 //   background: #7d2ae8;
   padding: 30px;
 }
+.button{
+  display: flex;
+  justify-content: center;
+}
+
+.button button{
+  color: white;
+  background-color: #7d2ae8;
+  width: 18vw;
+  height: 8vh;
+  border: none;
+  border-radius: 8px;
+
+}
 .container{
   position: relative;
   max-width: 850px;
