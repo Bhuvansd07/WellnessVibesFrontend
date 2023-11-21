@@ -23,19 +23,19 @@
           <div class="form-content">
             <div class="login-form">
               <div class="title">Login</div>
-            <form action="#">
+            <form [formGroup]="loginFormGroup">
               <div class="input-boxes">
                 <div class="input-box">
                   <i class="fas fa-envelope"></i>
-                  <input type="text" placeholder="Enter your email" required>
+                  <input formControlName = "username" type="text" placeholder="Enter your username" required>
                 </div>
                 <div class="input-box">
                   <i class="fas fa-lock"></i>
-                  <input type="password" placeholder="Enter your password" required>
+                  <input formControlName = "password" type="password" placeholder="Enter your password" required>
                 </div>
                 <div class="text"><a href="#">Forgot password?</a></div>
                 <div class="button input-box">
-                  <button type="submit" value="Sumbit" routerLink="/homepage">Sumbit</button>
+                  <button type="submit" value="Sumbit" (click)="goToLogin()">Sumbit</button>
                 </div>
                 <div class="text sign-up-text">Don't have an account? <label for="flip">Sigup now</label></div>
               </div>
@@ -43,22 +43,22 @@
         </div>
           <div class="signup-form">
             <div class="title">Signup</div>
-          <form action="#">
+          <form [formGroup]="registerFormGroup">
               <div class="input-boxes">
                 <div class="input-box">
                   <i class="fas fa-user"></i>
-                  <input type="text" placeholder="Enter your name" required>
+                  <input formControlName = "name" type="text" placeholder="Enter your name" required>
                 </div>
                 <div class="input-box">
                   <i class="fas fa-envelope"></i>
-                  <input type="text" placeholder="Enter your email" required>
+                  <input formControlName = "username" type="text" placeholder="Enter your username" required>
                 </div>
                 <div class="input-box">
                   <i class="fas fa-lock"></i>
-                  <input type="password" placeholder="Enter your password" required>
+                  <input formControlName = "password" type="password" placeholder="Enter your password" required>
                 </div>
                 <div class="button input-box">
-                    <button type="submit" value="Sumbit" (click)="goToLogin()">Sumbit</button>
+                    <button type="submit" value="Sumbit" (click)="goToRegister()">Sumbit</button>
                 </div>
                 <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
               </div>

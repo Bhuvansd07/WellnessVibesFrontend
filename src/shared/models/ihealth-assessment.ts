@@ -11,3 +11,4 @@ export interface IhealthAssessment {
     mental_illness: string,
     emotionalState: string,
 }
+

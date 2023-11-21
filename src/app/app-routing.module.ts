@@ -11,55 +11,62 @@ import { RoutinesComponent } from './features/routines/routines.component';
 import { StressManagementComponent } from './features/stress-management/stress-management.component';
 import { LoginComponent } from './features/login/login.component';
 import { ChartsComponent } from './features/charts/charts.component';
+import { authGuard } from 'src/shared/services/auth.guard';
 
 const routes: Routes = [
   {
-    path: "",
-    component: HomepageComponent
-  },
-  {
     path: "homepage",
-    component: HomepageComponent
+    component: HomepageComponent,
+    canActivate : [authGuard]
   },
   {
     path: "options",
-    component: OptionComponent
+    component: OptionComponent,
+    canActivate : [authGuard]
   },
   {
     path: "assessment",
-    component: AssessmentComponent
+    component: AssessmentComponent,
+    canActivate : [authGuard]
   },
   {
     path: "activities",
-    component: ActivitiesComponent
+    component: ActivitiesComponent,
+    canActivate : [authGuard]
   },
   {
     path: "feedback",
-    component: FeedbackComponent
+    component: FeedbackComponent,
+    canActivate : [authGuard]
   },
   {
     path: "review",
-    component: ReviewComponent
+    component: ReviewComponent,
+    canActivate : [authGuard]
   },
   {
     path: "workout",
-    component: WorkoutComponent
+    component: WorkoutComponent,
+    canActivate : [authGuard]
   },
   {
     path:"routines/:username",
-    component: RoutinesComponent
+    component: RoutinesComponent,
+    canActivate : [authGuard]
   },
   {
     path:"stress",
-    component:StressManagementComponent
+    component:StressManagementComponent,
+    canActivate : [authGuard]
   },
   {
-    path:"login",
+    path:"",
     component:LoginComponent
   },
   {
     path:"charts",
-    component:ChartsComponent
+    component:ChartsComponent,
+    canActivate : [authGuard]
   }
 ];
 
